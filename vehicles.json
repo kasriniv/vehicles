@@ -1,0 +1,115 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "vehicles",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/vehicles": {
+      "get": {
+        "summary": "get vehicle",
+        "description": "get vehicle",
+        "responses": {
+          "200": {
+            "description": "when response is fine",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/vehicle"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "summary": "update vehicle",
+        "description": "update vehicle",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/vehicle"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/vehicle"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "create new vehicle",
+        "description": "create new vehicle",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/vehicle"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/vehicle"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "responses": {
+          "200": {
+            "description": "when all fine",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/vehicle"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "vehicle": {
+        "title": "Root Type for vehicle",
+        "description": "The root of the vehicle type's schema.",
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "id": {
+            "format": "int32",
+            "type": "integer"
+          },
+          "category": {
+            "type": "string"
+          },
+          "region": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}
