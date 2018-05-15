@@ -1,0 +1,70 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "version" : "1.0.0",
+    "title" : "vehicles"
+  },
+  "paths" : {
+    "/vehicles" : {
+      "get" : {
+        "summary" : "get",
+        "description" : "get vehicle",
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "all good",
+            "schema" : {
+              "$ref" : "#/definitions/vehicle"
+            }
+          }
+        },
+        "x-contentType" : "application/json",
+        "x-accepts" : "application/json"
+      },
+      "post" : {
+        "summary" : "post new",
+        "description" : "post new",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/vehicle"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "all good",
+            "schema" : {
+              "$ref" : "#/definitions/vehicle"
+            }
+          }
+        },
+        "x-contentType" : "application/json",
+        "x-accepts" : "application/json"
+      }
+    }
+  },
+  "definitions" : {
+    "vehicle" : {
+      "type" : "object",
+      "properties" : {
+        "name" : {
+          "type" : "string"
+        },
+        "id" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "category" : {
+          "type" : "string"
+        },
+        "region" : {
+          "type" : "string"
+        }
+      },
+      "title" : "Root Type for vehicle",
+      "description" : "The root of the vehicle type's schema."
+    }
+  }
+}
